@@ -54,7 +54,6 @@ class Login : AppCompatActivity() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString()).addOnCompleteListener{ it ->
                     if(it.isSuccessful){
 
-                        nombrecompleto = "sapito"
                         showHome(it.result?.user?.email ?:"", nombrecompleto, edad, peso, altura,
                         cardiaco, asma, hipertension, diabetes, cancer, epilepsia)
                         //showHome2(it.result?.user?.email ?:"")

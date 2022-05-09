@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportownative">
         <activity
+            android:name=".PerfilUsuario"
+            android:exported="false" />
+        <activity
             android:name=".DatosUsuario"
             android:exported="false" />
         <activity
