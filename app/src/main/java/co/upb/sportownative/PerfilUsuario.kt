@@ -1,5 +1,6 @@
 package co.upb.sportownative
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.firestore.FirebaseFirestore
@@ -66,6 +67,19 @@ class PerfilUsuario : AppCompatActivity() {
                checkBoxDiabetesPerfil.isChecked = diabetes
                checkBoxCancerPerfil.isChecked = cancer
                checkBoxEpilepsiaPerfil.isChecked = epilepsia
+
+               val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+               prefs.putString("email", email)
+               prefs.putInt("edad", edad)
+               prefs.putInt("peso", peso)
+               prefs.putInt("altura", altura)
+               prefs.putBoolean("cardiaco", cardiaco)
+               prefs.putBoolean("asma", asma)
+               prefs.putBoolean("hipertension", hipertension)
+               prefs.putBoolean("diabetes", diabetes)
+               prefs.putBoolean("cancer", cancer)
+               prefs.putBoolean("epilepsia", epilepsia)
+               prefs.apply()
            }
        }
    }

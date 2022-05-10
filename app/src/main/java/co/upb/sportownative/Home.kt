@@ -23,8 +23,10 @@ class Home : AppCompatActivity() {
         val email = bundle?.getString("email")
         setup(email ?:"")
 
-        //Guardado de datos
-
+        //Traer datos del shared preference
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        val nombreusuario = prefs.getString("nombrecompleto", null).toString()
+        textViewUser.setText(nombreusuario)
 
         //Recordar borrar datos al cerrar sesión
     }
@@ -38,8 +40,14 @@ class Home : AppCompatActivity() {
                 putExtra("email", email)
             }
             startActivity(rutinasIntent)
-
         }
 
+        /*dietasButton.setOnClickListener{
+            val dietasIntent = Intent(this, Dietas::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(dietasIntent)
+
+        }*/
     }
 }

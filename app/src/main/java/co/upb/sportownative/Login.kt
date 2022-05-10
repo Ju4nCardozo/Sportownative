@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
 
         //setup
         setup()
-        session()
+        //session()
     }
 
     override fun onStart(){
