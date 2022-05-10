@@ -1,6 +1,7 @@
 package co.upb.sportownative
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,6 +21,14 @@ class DatosUsuario : AppCompatActivity() {
         saveDatosUsuario(email ?:"")
     }
 
+    private fun showHome(email: String){
+
+        val homeIntent = Intent(this, Home::class.java).apply {
+            putExtra("email", email)
+        }
+        startActivity(homeIntent)
+    }
+
     private fun saveDatosUsuario(email: String){
         buttonGuardar.setOnClickListener{
             db.collection("users").document(email).set(
@@ -34,6 +43,8 @@ class DatosUsuario : AppCompatActivity() {
                 "cancer" to checkBoxCancer.isChecked.toString().toBoolean(),
                 "epilepsia" to checkBoxEpilepsia.isChecked.toString().toBoolean())
             )
+
+            showHome(email)
         }
     }
 }
