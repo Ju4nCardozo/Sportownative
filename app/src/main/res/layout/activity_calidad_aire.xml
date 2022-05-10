@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            android:text="nombre de usuario"
+            android:text=""
             android:textStyle="bold" />
 
         <Button

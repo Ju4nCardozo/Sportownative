@@ -17,7 +17,10 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_home.*
+
+private val db = FirebaseFirestore.getInstance()
 
 class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
 
@@ -32,18 +35,9 @@ class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
         val email = bundle?.getString("email")
         setup(email ?:"")
 
-        //Traer datos del shared preference
-        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
-        val nombreusuario = prefs.getString("nombrecompleto", null).toString()
-        textViewUser.setText(nombreusuario)
-
         //mapa
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
-
-
-
-        //Recordar borrar datos al cerrar sesión
     }
     override fun onMapReady(googleMap: GoogleMap) {
         //geo localizacion
@@ -74,9 +68,11 @@ class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
     }
     private fun setup(email: String){
 
-        title = "Inicio"
+        title = "Calidad del aire"
 
+        db.collection("users").document(email).get().addOnSuccessListener {
 
-
+            textViewUser.setText(it.get("nombre_completo") as String?)
+        }
     }
 }
