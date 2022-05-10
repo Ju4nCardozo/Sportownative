@@ -43,7 +43,6 @@ class Login : AppCompatActivity() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString()).addOnCompleteListener{ it ->
                     if(it.isSuccessful){
                         showHome(it.result?.user?.email ?:"")
-                        //showHome2(it.result?.user?.email ?:"")
                     }else{
                         showAlert()
                     }
@@ -143,7 +142,7 @@ class Login : AppCompatActivity() {
                     FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
 
                         if (it.isSuccessful) {
-                            showDatosUsuario(account.email ?: "")
+                            showHome(account.email ?: "")
                         }else{
                             showAlert()
                         }
