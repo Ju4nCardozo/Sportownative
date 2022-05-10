@@ -55,5 +55,11 @@ class Home : AppCompatActivity() {
             }
             startActivity(rutinasIntent)
         }
+        calidadAireButton.setOnClickListener{
+            val calidadAireIntent = Intent(this, CalidadAire::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(calidadAireIntent)
+        }
     }
 }
