@@ -53,9 +53,7 @@ class Login : AppCompatActivity() {
             if(emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString()).addOnCompleteListener{ it ->
                     if(it.isSuccessful){
-
-                        showHome(it.result?.user?.email ?:"", nombrecompleto, edad, peso, altura,
-                        cardiaco, asma, hipertension, diabetes, cancer, epilepsia)
+                        showHome(it.result?.user?.email ?:"")
                         //showHome2(it.result?.user?.email ?:"")
                     }else{
                         showAlert()
@@ -96,7 +94,7 @@ class Login : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun showHome(email: String, nombrecompleto: String, edad: Int, peso: Int, altura: Int,
+    /*private fun showHome(email: String, nombrecompleto: String, edad: Int, peso: Int, altura: Int,
     cardiaco: Boolean, asma: Boolean, hipertension: Boolean, diabetes: Boolean, cancer: Boolean, epilepsia: Boolean){
 
         val homeIntent = Intent(this, DatosUsuario::class.java).apply {
@@ -113,11 +111,11 @@ class Login : AppCompatActivity() {
             putExtra("epilepsia", epilepsia)
         }
         startActivity(homeIntent)
-    }
+    }*/
 
-    private fun showHome2(email: String){
+    private fun showHome(email: String){
 
-        val homeIntent = Intent(this, DatosUsuario::class.java).apply {
+        val homeIntent = Intent(this, Home::class.java).apply {
             putExtra("email", email)
         }
         startActivity(homeIntent)
@@ -129,8 +127,7 @@ class Login : AppCompatActivity() {
 
         if(email != null){
             authLayout.visibility = View.INVISIBLE
-            showHome(email, nombrecompleto, edad, peso, altura,
-                cardiaco, asma, hipertension, diabetes, cancer, epilepsia)
+            showHome(email)
         }
     }
 
@@ -149,8 +146,7 @@ class Login : AppCompatActivity() {
                     FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
 
                         if (it.isSuccessful) {
-                            showHome(account.email ?: "", nombrecompleto, edad, peso, altura,
-                                cardiaco, asma, hipertension, diabetes, cancer, epilepsia)
+                            showHome(account.email ?: "")
                             //showHome2(account.email ?: "")
                         }else{
                             showAlert()
