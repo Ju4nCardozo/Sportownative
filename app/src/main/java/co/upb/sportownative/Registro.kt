@@ -43,7 +43,7 @@ class Registro : AppCompatActivity() {
         RegistroButton.setOnClickListener{
             if(editTextEmailRegistro.text.isNotEmpty() && editTextEmailConfirmar.text.isNotEmpty() && editTextPasswordRegistro.text.isNotEmpty()){
                 if(editTextEmailRegistro.text.toString() == editTextEmailConfirmar.text.toString()){
-                    if(editTextPasswordRegistro.length() > 8){
+                    if(editTextPasswordRegistro.length() > 8 && editTextPasswordRegistro == editTextConfirmarPasswordRegistro){
                         FirebaseAuth.getInstance().createUserWithEmailAndPassword(editTextEmailRegistro.text.toString(), editTextPasswordRegistro.text.toString()).addOnCompleteListener{
                             if(it.isSuccessful){
                                 db.collection("users").document(editTextEmailRegistro.text.toString())
