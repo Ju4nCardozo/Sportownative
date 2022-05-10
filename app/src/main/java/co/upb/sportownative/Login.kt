@@ -20,21 +20,10 @@ class Login : AppCompatActivity() {
 
     private val GOOGLE_SING_IN = 100
     private val db = FirebaseFirestore.getInstance()
-    private var nombrecompleto = "bobohpta"
-    private var edad = 0
-    private var peso = 0
-    private var altura = 0
-    private var cardiaco = false
-    private var asma = false
-    private var hipertension = false
-    private var diabetes = false
-    private var cancer = false
-    private var epilepsia = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
 
         //setup
         setup()
@@ -75,7 +64,7 @@ class Login : AppCompatActivity() {
         googleButton.setOnClickListener{
 
             val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("562685779526-ak229eh106vr9a3t5v2ijnkmbv59irap.apps.googleusercontent.com")
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
 
@@ -121,6 +110,14 @@ class Login : AppCompatActivity() {
         startActivity(homeIntent)
     }
 
+    private fun showDatosUsuario(email: String){
+
+        val datosUsuarioIntent = Intent(this, DatosUsuario::class.java).apply {
+            putExtra("email", email)
+        }
+        startActivity(datosUsuarioIntent)
+    }
+
     private fun session(){
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
         val email = prefs.getString("email", null)
@@ -146,8 +143,7 @@ class Login : AppCompatActivity() {
                     FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
 
                         if (it.isSuccessful) {
-                            showHome(account.email ?: "")
-                            //showHome2(account.email ?: "")
+                            showDatosUsuario(account.email ?: "")
                         }else{
                             showAlert()
                         }
