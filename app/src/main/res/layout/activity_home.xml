@@ -28,11 +28,12 @@
             android:layout_marginRight="10dp"
             />
 
-        <ImageView
+        <Button
             android:id="@+id/foto"
             android:layout_width="67dp"
             android:layout_height="69dp"
             android:adjustViewBounds="true"
+            android:background="@drawable/perfil_icono"
             android:src="@drawable/perfil_icono"
             android:layout_gravity="center"/>
     </LinearLayout>
