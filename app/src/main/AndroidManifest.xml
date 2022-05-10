@@ -28,6 +28,9 @@
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
+            android:name=".Rutinas"
+            android:exported="false" />
+        <activity
             android:name=".bienvenido"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
