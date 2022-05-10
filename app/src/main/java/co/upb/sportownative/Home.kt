@@ -47,7 +47,13 @@ class Home : AppCompatActivity() {
                 putExtra("email", email)
             }
             startActivity(dietasIntent)
+        }
 
+        foto.setOnClickListener{
+            val rutinasIntent = Intent(this, PerfilUsuario::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(rutinasIntent)
         }
     }
 }

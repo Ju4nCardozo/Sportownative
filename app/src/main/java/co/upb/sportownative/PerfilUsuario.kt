@@ -1,6 +1,7 @@
 package co.upb.sportownative
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.firestore.FirebaseFirestore
@@ -97,5 +98,10 @@ class PerfilUsuario : AppCompatActivity() {
         checkBoxDiabetesPerfil.isChecked = diabetes
         checkBoxCancerPerfil.isChecked = cancer
         checkBoxEpilepsiaPerfil.isChecked = epilepsia
+
+        buttonAtras.setOnClickListener {
+            val atrasIntent = Intent(this, PerfilUsuario::class.java)
+            startActivity(atrasIntent)
+        }
     }
 }
