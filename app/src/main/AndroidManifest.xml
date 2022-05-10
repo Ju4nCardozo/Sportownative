@@ -31,6 +31,9 @@
             android:name=".Rutinas"
             android:exported="false" />
         <activity
+            android:name=".Dietas"
+            android:exported="false" />
+        <activity
             android:name=".bienvenido"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
