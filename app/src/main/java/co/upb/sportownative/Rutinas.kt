@@ -8,15 +8,11 @@ import co.upb.sportownative.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_login.*
 
-enum class ProviderType{
-    BASIC,
-    GOOGLE
-}
 
-class Home : AppCompatActivity() {
+class Rutinas : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_rutinas)
 
         //setup
         val bundle = intent.extras
@@ -28,18 +24,11 @@ class Home : AppCompatActivity() {
 
         //Recordar borrar datos al cerrar sesión
     }
-
     private fun setup(email: String){
 
         title = "Inicio"
 
-        rutinasButton.setOnClickListener{
-            val rutinasIntent = Intent(this, Rutinas::class.java).apply {
-                putExtra("email", email)
-            }
-            startActivity(rutinasIntent)
 
-        }
 
     }
 }
