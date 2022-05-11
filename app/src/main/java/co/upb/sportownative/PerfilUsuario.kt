@@ -93,7 +93,7 @@ class PerfilUsuario : AppCompatActivity() {
             prefs.apply()
 
             FirebaseAuth.getInstance().signOut()
-            val homeIntent = Intent(this, Home::class.java)
+            val homeIntent = Intent(this, Login::class.java)
             startActivity(homeIntent)
         }
     }
