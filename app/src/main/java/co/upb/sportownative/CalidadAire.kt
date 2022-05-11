@@ -18,7 +18,9 @@ import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_calidad_aire.*
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home.textViewUser
 
 private val db = FirebaseFirestore.getInstance()
 
@@ -39,9 +41,7 @@ class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
     }
-    override fun onMapReady(googleMap: GoogleMap) {
-        //geo localizacion
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+    fun checkPermission(): Boolean{
         if (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -51,8 +51,15 @@ class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
             ) != PackageManager.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 181)
-
+            return false
         }
+        return true
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        //geo localizacion
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        if(checkPermission())
         fusedLocationClient.lastLocation.addOnSuccessListener { location : Location ->
             val lat = location.latitude
             val lon = location.longitude
@@ -74,5 +81,11 @@ class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
 
             textViewUser.setText(it.get("nombre_completo") as String?)
         }
+
+        actualizarButton.setOnClickListener{
+            val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
+            mapFragment?.getMapAsync(this)
+        }
+
     }
 }
