@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_datos_usuario.*
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_perfil_usuario.*
 
 private val db = FirebaseFirestore.getInstance()
@@ -27,81 +29,72 @@ class PerfilUsuario : AppCompatActivity() {
 
         val bundle = intent.extras
         val email = bundle?.getString("email")
-        nombrecompleto = bundle?.getString("nombrecompleto").toString()
-        edad = bundle?.getInt("edad").toString().toInt()
-        peso = bundle?.getInt("peso").toString().toInt()
-        altura = bundle?.getInt("altura").toString().toInt()
-        cardiaco = bundle?.getBoolean("cardiaco").toString().toBoolean()
-        asma = bundle?.getBoolean("asma").toString().toBoolean()
-        hipertension = bundle?.getBoolean("hipertension").toString().toBoolean()
-        diabetes = bundle?.getBoolean("diabetes").toString().toBoolean()
-        cancer = bundle?.getBoolean("cancer").toString().toBoolean()
-        epilepsia = bundle?.getBoolean("epilepsia").toString().toBoolean()
 
-        setup(email?:"", nombrecompleto, edad, peso, altura, cardiaco, asma, hipertension, diabetes, cancer, epilepsia)
+        setup(email ?:"")
         infoUsuario(email ?:"")
     }
 
     private fun infoUsuario(email: String){
 
         buttonActualizarPerfil.setOnClickListener{
-           db.collection("users").document(email).get().addOnSuccessListener {
 
-               nombrecompleto = it.getString("nombre_completo").toString()
-               edad = it.get("edad").toString().toInt()
-               peso = it.get("peso").toString().toInt()
-               altura = it.get("altura").toString().toInt()
-               cardiaco = it.get("cardiaco").toString().toBoolean()
-               asma = it.get("asma").toString().toBoolean()
-               hipertension = it.get("hipertension").toString().toBoolean()
-               diabetes = it.get("diabetes").toString().toBoolean()
-               cancer = it.get("cancer").toString().toBoolean()
-               epilepsia = it.get("epilepsia").toString().toBoolean()
+            var splitedad = editTextEdadPerfil.text.toString().split(" ")
+            edad = splitedad[0].toInt()
 
-               editTextNombreCompletoPerfil.setText(nombrecompleto)
-               editTextEdadPerfil.setText(edad.toString() + " años")
-               editTextPesoPerfil.setText(peso.toString() + " Kg")
-               editTextAlturaPerfil.setText(altura.toString() + " cm")
-               checkBoxCardiacoPerfil.isChecked = cardiaco
-               checkBoxAsmaPerfil.isChecked = asma
-               checkBoxHipertensionPerfil.isChecked = hipertension
-               checkBoxDiabetesPerfil.isChecked = diabetes
-               checkBoxCancerPerfil.isChecked = cancer
-               checkBoxEpilepsiaPerfil.isChecked = epilepsia
+            var splitpeso = editTextPesoPerfil.text.toString().split(" ")
+            peso = splitpeso[0].toInt()
 
-               val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
-               prefs.putString("email", email)
-               prefs.putInt("edad", edad)
-               prefs.putInt("peso", peso)
-               prefs.putInt("altura", altura)
-               prefs.putBoolean("cardiaco", cardiaco)
-               prefs.putBoolean("asma", asma)
-               prefs.putBoolean("hipertension", hipertension)
-               prefs.putBoolean("diabetes", diabetes)
-               prefs.putBoolean("cancer", cancer)
-               prefs.putBoolean("epilepsia", epilepsia)
-               prefs.apply()
-           }
+            var splitaltura = editTextAlturaPerfil.text.toString().split(" ")
+            altura = splitedad[0].toInt()
+
+            db.collection("users").document(email).set(
+                hashMapOf("nombre_completo" to editTextNombreCompleto.text.toString(),
+                    "edad" to edad,
+                    "peso" to peso,
+                    "altura" to altura,
+                    "cardiaco" to checkBoxCardiaco.isChecked.toString().toBoolean(),
+                    "asma" to checkBoxHipertension.isChecked.toString().toBoolean(),
+                    "hipertension" to checkBoxHipertension.isChecked.toString().toBoolean(),
+                    "diabetes" to checkBoxDiabetes.isChecked.toString().toBoolean(),
+                    "cancer" to checkBoxCancer.isChecked.toString().toBoolean(),
+                    "epilepsia" to checkBoxEpilepsia.isChecked.toString().toBoolean())
+            )
        }
    }
 
-    private fun setup(email: String, nombrecompleto: String, edad: Int, peso: Int, altura: Int, cardiaco: Boolean, asma: Boolean, hipertension: Boolean, diabetes: Boolean, cancer: Boolean, epilepsia: Boolean){
+    private fun setup(email: String){
 
         title = "Datos Usuario"
-        editTextNombreCompletoPerfil.setText(nombrecompleto)
-        editTextEdadPerfil.setText(edad.toString() + " años")
-        editTextPesoPerfil.setText(peso.toString() + " Kg")
-        editTextAlturaPerfil.setText(altura.toString() + " cm")
-        checkBoxCardiacoPerfil.isChecked = cardiaco
-        checkBoxAsmaPerfil.isChecked = asma
-        checkBoxHipertensionPerfil.isChecked = hipertension
-        checkBoxDiabetesPerfil.isChecked = diabetes
-        checkBoxCancerPerfil.isChecked = cancer
-        checkBoxEpilepsiaPerfil.isChecked = epilepsia
+
+        db.collection("users").document(email).get().addOnSuccessListener {
+
+            editTextNombreCompletoPerfil.setText(it.get("nombre_completo") as String?)
+            editTextEdadPerfil.setText(it.get("edad").toString() + " años")
+            editTextPesoPerfil.setText(it.get("peso").toString() + " Kg")
+            editTextAlturaPerfil.setText(it.get("altura").toString() + " cm")
+            checkBoxCardiacoPerfil.isChecked = it.get("cardiaco").toString().toBoolean()
+            checkBoxAsmaPerfil.isChecked = it.get("asma").toString().toBoolean()
+            checkBoxHipertensionPerfil.isChecked = it.get("hipertension").toString().toBoolean()
+            checkBoxDiabetesPerfil.isChecked = it.get("diabetes").toString().toBoolean()
+            checkBoxCancerPerfil.isChecked = it.get("cancer").toString().toBoolean()
+            checkBoxEpilepsiaPerfil.isChecked = it.get("epilepsia").toString().toBoolean()
+
+        }
+
 
         buttonAtras.setOnClickListener {
             val atrasIntent = Intent(this, PerfilUsuario::class.java)
             startActivity(atrasIntent)
+        }
+
+        buttonCerrarSession.setOnClickListener{
+            val prefs = getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()
+            prefs.clear()
+            prefs.apply()
+
+            FirebaseAuth.getInstance().signOut()
+            val homeIntent = Intent(this, Home::class.java)
+            startActivity(homeIntent)
         }
     }
 }

@@ -25,9 +25,11 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+
+
         //setup
         setup()
-        //session()
+        session()
     }
 
     override fun onStart(){
@@ -42,7 +44,17 @@ class Login : AppCompatActivity() {
             if(emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString()).addOnCompleteListener{ it ->
                     if(it.isSuccessful){
-                        showHome(it.result?.user?.email ?:"")
+                        val prefs = getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()
+                        prefs.putString("email", it.result?.user?.email ?: "")
+                        prefs.apply()
+                        val prefs2 = getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE)
+
+                        var email = prefs2.getString("email", null)
+
+                        if (email != null) {
+                            showHome(email)
+                        }
+
                     }else{
                         showAlert()
                     }
@@ -81,25 +93,6 @@ class Login : AppCompatActivity() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
-
-    /*private fun showHome(email: String, nombrecompleto: String, edad: Int, peso: Int, altura: Int,
-    cardiaco: Boolean, asma: Boolean, hipertension: Boolean, diabetes: Boolean, cancer: Boolean, epilepsia: Boolean){
-
-        val homeIntent = Intent(this, DatosUsuario::class.java).apply {
-            putExtra("email", email)
-            putExtra("nombrecompleto", nombrecompleto)
-            putExtra("edad", edad)
-            putExtra("peso", peso)
-            putExtra("altura", altura)
-            putExtra("cardiaco", cardiaco)
-            putExtra("asma", asma)
-            putExtra("hipertension", hipertension)
-            putExtra("diabetes", diabetes)
-            putExtra("cancer", cancer)
-            putExtra("epilepsia", epilepsia)
-        }
-        startActivity(homeIntent)
-    }*/
 
     private fun showHome(email: String){
 
