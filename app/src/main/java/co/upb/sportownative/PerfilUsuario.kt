@@ -38,27 +38,27 @@ class PerfilUsuario : AppCompatActivity() {
 
         buttonActualizarPerfil.setOnClickListener{
 
-            var splitedad = editTextEdadPerfil.text.toString().split(" ")
-            edad = splitedad[0].toInt()
+            edad = editTextEdadPerfil.text.toString().toInt()
 
-            var splitpeso = editTextPesoPerfil.text.toString().split(" ")
-            peso = splitpeso[0].toInt()
+            peso = editTextPesoPerfil.text.toString().toInt()
 
-            var splitaltura = editTextAlturaPerfil.text.toString().split(" ")
-            altura = splitedad[0].toInt()
+            altura = editTextAlturaPerfil.text.toString().toInt()
+
 
             db.collection("users").document(email).set(
-                hashMapOf("nombre_completo" to editTextNombreCompleto.text.toString(),
+                hashMapOf("nombre_completo" to editTextNombreCompletoPerfil.text.toString(),
                     "edad" to edad,
                     "peso" to peso,
                     "altura" to altura,
-                    "cardiaco" to checkBoxCardiaco.isChecked.toString().toBoolean(),
-                    "asma" to checkBoxHipertension.isChecked.toString().toBoolean(),
-                    "hipertension" to checkBoxHipertension.isChecked.toString().toBoolean(),
-                    "diabetes" to checkBoxDiabetes.isChecked.toString().toBoolean(),
-                    "cancer" to checkBoxCancer.isChecked.toString().toBoolean(),
-                    "epilepsia" to checkBoxEpilepsia.isChecked.toString().toBoolean())
-            )
+                    "cardiaco" to checkBoxCardiacoPerfil.isChecked.toString().toBoolean(),
+                    "asma" to checkBoxHipertensionPerfil.isChecked.toString().toBoolean(),
+                    "hipertension" to checkBoxHipertensionPerfil.isChecked.toString().toBoolean(),
+                    "diabetes" to checkBoxDiabetesPerfil.isChecked.toString().toBoolean(),
+                    "cancer" to checkBoxCancerPerfil.isChecked.toString().toBoolean(),
+                    "epilepsia" to checkBoxEpilepsiaPerfil.isChecked.toString().toBoolean())
+            ).addOnCompleteListener { val homeIntent = Intent(this, Home::class.java)
+                startActivity(homeIntent) }
+
        }
    }
 
@@ -69,9 +69,9 @@ class PerfilUsuario : AppCompatActivity() {
         db.collection("users").document(email).get().addOnSuccessListener {
 
             editTextNombreCompletoPerfil.setText(it.get("nombre_completo") as String?)
-            editTextEdadPerfil.setText(it.get("edad").toString() + " años")
-            editTextPesoPerfil.setText(it.get("peso").toString() + " Kg")
-            editTextAlturaPerfil.setText(it.get("altura").toString() + " cm")
+            editTextEdadPerfil.setText(it.get("edad").toString())
+            editTextPesoPerfil.setText(it.get("peso").toString())
+            editTextAlturaPerfil.setText(it.get("altura").toString())
             checkBoxCardiacoPerfil.isChecked = it.get("cardiaco").toString().toBoolean()
             checkBoxAsmaPerfil.isChecked = it.get("asma").toString().toBoolean()
             checkBoxHipertensionPerfil.isChecked = it.get("hipertension").toString().toBoolean()
@@ -82,10 +82,7 @@ class PerfilUsuario : AppCompatActivity() {
         }
 
 
-        buttonAtras.setOnClickListener {
-            val atrasIntent = Intent(this, PerfilUsuario::class.java)
-            startActivity(atrasIntent)
-        }
+
 
         buttonCerrarSession.setOnClickListener{
             val prefs = getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()

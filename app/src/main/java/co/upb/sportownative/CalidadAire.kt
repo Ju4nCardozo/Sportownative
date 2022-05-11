@@ -2,6 +2,7 @@ package co.upb.sportownative
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -86,6 +87,11 @@ class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
             val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
             mapFragment?.getMapAsync(this)
         }
-
+        fotoCalidadAire.setOnClickListener{
+            val rutinasIntent = Intent(this, PerfilUsuario::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(rutinasIntent)
+        }
     }
 }

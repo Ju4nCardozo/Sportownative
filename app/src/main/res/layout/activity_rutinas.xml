@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/foto"
+            android:id="@+id/fotoRutinas"
             android:layout_width="67dp"
             android:layout_height="69dp"
             android:layout_gravity="center"
