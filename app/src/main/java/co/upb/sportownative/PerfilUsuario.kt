@@ -11,16 +11,9 @@ import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_perfil_usuario.*
 
 private val db = FirebaseFirestore.getInstance()
-private var nombrecompleto = " "
 private var edad = 0
 private var peso = 0
 private var altura = 0
-private var cardiaco = false
-private var asma = false
-private var hipertension = false
-private var diabetes = false
-private var cancer = false
-private var epilepsia = false
 
 class PerfilUsuario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,19 +37,17 @@ class PerfilUsuario : AppCompatActivity() {
 
             altura = editTextAlturaPerfil.text.toString().toInt()
 
-
-            db.collection("users").document(email).set(
-                hashMapOf("nombre_completo" to editTextNombreCompletoPerfil.text.toString(),
+            db.collection("users").document(email).update(mapOf("nombre_completo" to editTextNombreCompletoPerfil.text.toString(),
                     "edad" to edad,
                     "peso" to peso,
                     "altura" to altura,
                     "cardiaco" to checkBoxCardiacoPerfil.isChecked.toString().toBoolean(),
-                    "asma" to checkBoxHipertensionPerfil.isChecked.toString().toBoolean(),
+                    "asma" to checkBoxAsmaPerfil.isChecked.toString().toBoolean(),
                     "hipertension" to checkBoxHipertensionPerfil.isChecked.toString().toBoolean(),
                     "diabetes" to checkBoxDiabetesPerfil.isChecked.toString().toBoolean(),
                     "cancer" to checkBoxCancerPerfil.isChecked.toString().toBoolean(),
-                    "epilepsia" to checkBoxEpilepsiaPerfil.isChecked.toString().toBoolean())
-            ).addOnCompleteListener { val homeIntent = Intent(this, Home::class.java)
+                    "epilepsia" to checkBoxEpilepsiaPerfil.isChecked.toString().toBoolean()
+            )).addOnCompleteListener { val homeIntent = Intent(this, Home::class.java)
                 startActivity(homeIntent) }
 
        }
@@ -80,9 +71,6 @@ class PerfilUsuario : AppCompatActivity() {
             checkBoxEpilepsiaPerfil.isChecked = it.get("epilepsia").toString().toBoolean()
 
         }
-
-
-
 
         buttonCerrarSession.setOnClickListener{
             val prefs = getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()

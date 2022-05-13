@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context=".Dietas"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textViewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="nombre de usuario"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/fotoDietas"
+            android:layout_width="67dp"
+            android:layout_height="69dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@drawable/perfil_icono"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewDesayunoTitulo"
+                android:layout_width="218dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="20dp"
+                app:srcCompat="@drawable/desayuno2"
+                android:layout_marginBottom="9dp"/>
+
+            <ImageView
+                android:id="@+id/imageViewDesayuno"
+                android:layout_width="wrap_content"
+                android:layout_height="197dp"
+                app:srcCompat="@drawable/desayunosaludable" />
+
+            <ImageView
+                android:id="@+id/imageViewComponentesTitulo"
+                android:layout_width="236dp"
+                android:layout_height="64dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/componentesdesayuno" />
+
+            <TextView
+                android:id="@+id/RegistroTextViewIngrediente1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 2 Huevos"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 Aguacate"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 3 Tomates cherry rojo / amarillo"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Queso feta"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <ImageView
+                android:id="@+id/imageViewPreparacionTitulo"
+                android:layout_width="212dp"
+                android:layout_height="31dp"
+                app:srcCompat="@drawable/preparacion" />
+
+            <TextView
+                android:id="@+id/Preparaciondesayuno"
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="El aguacate es una fruta ideal para tomar en cualquier momento del día. Cada vez adquiere más protagonismo dentro de los desayunos, porque es un ingrediente que combina con muchos otros. En este caso, lo vamos a servir con unos huevos revueltos, unos tomatitos cherry rojos y amarillos y un poco de queso feta."
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
