@@ -15,6 +15,9 @@
             android:name=".Cena"
             android:exported="false" />
         <activity
+            android:name=".Rutina1"
+            android:exported="false" />
+        <activity
             android:name=".Merienda"
             android:exported="false" />
         <activity

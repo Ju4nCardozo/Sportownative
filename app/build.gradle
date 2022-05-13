@@ -9,7 +9,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 32
-
+    
     defaultConfig {
         applicationId "co.upb.sportownative"
         minSdk 29

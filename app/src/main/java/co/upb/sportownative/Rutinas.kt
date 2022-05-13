@@ -36,5 +36,29 @@ class Rutinas : AppCompatActivity()  {
             }
             startActivity(rutinasIntent)
         }
+        rutina1Button.setOnClickListener{
+            val rutinaIntent = Intent(this, Rutina1::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(rutinaIntent)
+        }
+        rutina2Button.setOnClickListener{
+            val rutinaIntent = Intent(this, Rutina1::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(rutinaIntent)
+        }
+        rutina3Button.setOnClickListener{
+            val rutinaIntent = Intent(this, Rutina1::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(rutinaIntent)
+        }
+        rutina4Button.setOnClickListener{
+            val rutinaIntent = Intent(this, Rutina1::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(rutinaIntent)
+        }
     }
 }
