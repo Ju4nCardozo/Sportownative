@@ -58,7 +58,7 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="30dp"
                 android:background="@color/white"
-                app:srcCompat="@drawable/desayuno2" />
+                app:srcCompat="@drawable/desayuno" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
