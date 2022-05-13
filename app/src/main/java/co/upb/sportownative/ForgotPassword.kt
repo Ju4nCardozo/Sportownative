@@ -13,6 +13,8 @@ class ForgotPassword : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
 
+        title = "Olvidé mi contraseña"
+
         val bundle = intent.extras
         val email = bundle?.getString("email")
 

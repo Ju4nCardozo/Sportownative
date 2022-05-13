@@ -18,6 +18,8 @@ class Registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
+        title = "Registro"
+
         //setup
         setup()
     }

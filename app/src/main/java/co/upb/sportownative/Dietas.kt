@@ -34,5 +34,40 @@ class Dietas : AppCompatActivity() {
             }
             startActivity(rutinasIntent)
         }
+
+        imageButton4.setOnClickListener{
+            val desayunoIntent = Intent(this, Desayuno::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(desayunoIntent)
+        }
+
+        imageButton5.setOnClickListener{
+            val mediaIntent = Intent(this, Mediamanana::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(mediaIntent)
+        }
+
+        imageButton6.setOnClickListener{
+            val almuerzoIntent = Intent(this, Almuerzo::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(almuerzoIntent)
+        }
+
+        imageButton7.setOnClickListener{
+            val meriendaIntent = Intent(this, Merienda::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(meriendaIntent)
+        }
+
+        imageButton8.setOnClickListener{
+            val cenaIntent = Intent(this, Cena::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(cenaIntent)
+        }
     }
 }
