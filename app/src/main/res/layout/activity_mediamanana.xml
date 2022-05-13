@@ -1,9 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Mediamanana">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context=".Mediamanana"
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textViewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="nombre de usuario"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/fotoDietas"
+            android:layout_width="67dp"
+            android:layout_height="69dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@drawable/perfil_icono"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewDesayunoTitulo"
+                android:layout_width="218dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="9dp"
+                app:srcCompat="@drawable/mediamananatitulo" />
+
+            <ImageView
+                android:id="@+id/imageViewDesayuno"
+                android:layout_width="wrap_content"
+                android:layout_height="197dp"
+                app:srcCompat="@drawable/pinchosdefrutas" />
+
+            <ImageView
+                android:id="@+id/imageViewComponentesTitulo"
+                android:layout_width="236dp"
+                android:layout_height="64dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/componentesdesayuno" />
+
+            <TextView
+                android:id="@+id/RegistroTextViewIngrediente1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 banano"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 4 fresas"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 7 uvas"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 kiwi"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <ImageView
+                android:id="@+id/imageViewPreparacionTitulo"
+                android:layout_width="212dp"
+                android:layout_height="31dp"
+                app:srcCompat="@drawable/preparacion" />
+
+            <TextView
+                android:id="@+id/Preparaciondesayuno"
+                android:layout_width="342dp"
+                android:layout_height="230dp"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="Plátano, mandarinas, fresas, kiwis, … pélalas y córtalas en trocitos. Colócalas en un palillo largo de brocheta sin punta. De esta forma los niños comerán fruta de una forma diferente, fácil y divertida. También, si son muy pequeños, puedes colocar los trozos de fruta en un tupper junto con un poco de almíbar de melocotón o piña de lata para evitar la oxidación de la fruta."
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,9 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Merienda">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context=".Merienda"
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textViewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="nombre de usuario"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/fotoDietas"
+            android:layout_width="67dp"
+            android:layout_height="69dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@drawable/perfil_icono"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewDesayunoTitulo"
+                android:layout_width="218dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="9dp"
+                app:srcCompat="@drawable/meriendatitulo" />
+
+            <ImageView
+                android:id="@+id/imageViewDesayuno"
+                android:layout_width="wrap_content"
+                android:layout_height="197dp"
+                app:srcCompat="@drawable/meriendazo" />
+
+            <ImageView
+                android:id="@+id/imageViewComponentesTitulo"
+                android:layout_width="236dp"
+                android:layout_height="64dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/componentesdesayuno" />
+
+            <TextView
+                android:id="@+id/RegistroTextViewIngrediente1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 4 tajadas de pan"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Pesto  (200g)"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 2 lonchas de queso mozarella"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 2 tomates"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Lonchas de pavo cocido  (200g)"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente6"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 4 hojas de albahaca"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <ImageView
+                android:id="@+id/imageViewPreparacionTitulo"
+                android:layout_width="212dp"
+                android:layout_height="31dp"
+                app:srcCompat="@drawable/preparacion" />
+
+            <TextView
+                android:id="@+id/Preparaciondesayuno"
+                android:layout_width="342dp"
+                android:layout_height="320dp"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="Retira la piel a los tomates, lávalos y sécalos con papel de cocina; a continuación, córtalos en rodajas. Luego escurre bien las mozzarellas y córtalas de la misma manera. Mientras tanto vete calentando las tostadas de pan. Una vez ya estén calientes, reparte en la base de los panes las lonchas de pavo dobladas. Añade las rodajas de mozzarella, pon encima las de tomate y, por último, cubre todo con las hojas de albahaca. Para terminar lava bien unas hojas de albahaca y sécalas con papel absorbente. Coloca las tapas y, ¡a disfrutar!"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,9 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Almuerzo">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context=".Almuerzo"
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textViewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="nombre de usuario"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/fotoDietas"
+            android:layout_width="67dp"
+            android:layout_height="69dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@drawable/perfil_icono"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewDesayunoTitulo"
+                android:layout_width="218dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="9dp"
+                app:srcCompat="@drawable/almuerzotitulo" />
+
+            <ImageView
+                android:id="@+id/imageViewDesayuno"
+                android:layout_width="wrap_content"
+                android:layout_height="197dp"
+                app:srcCompat="@drawable/almuerzopic" />
+
+            <ImageView
+                android:id="@+id/imageViewComponentesTitulo"
+                android:layout_width="236dp"
+                android:layout_height="64dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/componentesdesayuno" />
+
+            <TextView
+                android:id="@+id/RegistroTextViewIngrediente1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Garbanzos cocidos  (200g)"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Pechuga de pollo  (200g)"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 Brócoli pequeño"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 Calabacín pequeño"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 Zanahoria"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente6"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 Cebolla"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente7"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- 1 Diente de ajo"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente8"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Aceite de oliva virgen extra"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente9"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Sal"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/RegistroIngrediente10"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="- Pimienta negra"
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="10dp"/>
+
+            <ImageView
+                android:id="@+id/imageViewPreparacionTitulo"
+                android:layout_width="212dp"
+                android:layout_height="31dp"
+                app:srcCompat="@drawable/preparacion" />
+
+            <TextView
+                android:id="@+id/Preparaciondesayuno"
+                android:layout_width="342dp"
+                android:layout_height="450dp"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/montserratregular"
+                android:minHeight="48dp"
+                android:text="Empezamos con el pollo. Lo cortamos en tiras (sin piel ni huesos) y lo ponemos a macerar con un diente de ajo picado y un par de cucharadas de aceite.
+
+Mientras preparamos las verduras. La zanahoria la limpiamos, pelamos y cortamos en bastones finos, el brócoli lo separamos en arbolitos y el calabacín lo limpiamos y cortamos con piel en dados, además la cebolla la pelamos y cortaremos en juliana.
+
+En una sartén salteamos el pollo hasta dorarlo, lo reservamos. Añadimos en la misma sartén la cebolla, dos minutos después el resto de verduras y salteamos un par de minutos más.
+
+Añadimos el pollo y los garbanzos y removemos, mezclando y salteando a la vez durante otros dos o tres minutos."
+                android:textColor="@android:color/black"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
