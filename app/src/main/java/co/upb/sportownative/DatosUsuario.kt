@@ -26,6 +26,8 @@ class DatosUsuario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_datos_usuario)
 
+        title = "Datos del usuario"
+
         //setup
         val bundle = intent.extras
         val email = bundle?.getString("email")

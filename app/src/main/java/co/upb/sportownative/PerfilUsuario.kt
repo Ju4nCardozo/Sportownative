@@ -55,7 +55,7 @@ class PerfilUsuario : AppCompatActivity() {
 
     private fun setup(email: String){
 
-        title = "Datos Usuario"
+        title = "Perfil Usuario"
 
         db.collection("users").document(email).get().addOnSuccessListener {
 
