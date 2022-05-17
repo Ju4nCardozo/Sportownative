@@ -21,10 +21,11 @@
             android:id="@+id/textViewUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text=""
             android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            android:text="nombre de usuario"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp" />
 
         <Button
             android:id="@+id/fotoRutina1"
@@ -45,11 +46,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dia 1"/>
+                android:paddingLeft="15sp"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserratbold"
+                android:text="Día 1"/>
             <ExpandableListView
                 android:id="@+id/eListView1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="410dp"
                 android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="2dp"
@@ -60,11 +64,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dia 2"/>
+                android:paddingLeft="15sp"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserratbold"
+                android:text="Día 2"/>
             <ExpandableListView
                 android:id="@+id/eListView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="410dp"
                 android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="2dp"
@@ -75,11 +82,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dia 3"/>
+                android:paddingLeft="15sp"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserratbold"
+                android:text="Día 3"/>
             <ExpandableListView
                 android:id="@+id/eListView3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="440dp"
                 android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="2dp"

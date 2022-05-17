@@ -4,18 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/drawable/ic_launcher_background.xml" value="0.111" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_almuerzo.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_bienvenido.xml" value="0.16847826086956522" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_calidad_aire.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_cena.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_datos_usuario.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_desayuno.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_dietas.xml" value="0.1" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_forgot_password.xml" value="0.16847826086956522" />
-        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_home.xml" value="0.1037037037037037" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_login.xml" value="0.16847826086956522" />
-        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.33" />
-        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_registro.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_mediamanana.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_merienda.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.16184971098265896" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_registro.xml" value="0.15469613259668508" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_rutina1.xml" value="0.1" />
-        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_rutinas.xml" value="0.33" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/activity_rutinas.xml" value="0.24561403508771928" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/list_group.xml" value="0.1278538812785388" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/list_item.xml" value="0.203125" />
         <entry key="..\:/Users/PC/Documents/GitHub/Sportownative/app/src/main/res/layout/rutina1.xml" value="0.203125" />
