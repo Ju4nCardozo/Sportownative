@@ -161,6 +161,12 @@ class Rutina1 : AppCompatActivity() {
 
             textViewUser.setText(it.get("nombre_completo") as String?)
         }
+        fotoRutina1.setOnClickListener{
+            val rutinasIntent = Intent(this, PerfilUsuario::class.java).apply {
+                putExtra("email", email)
+            }
+            startActivity(rutinasIntent)
+        }
     }
 
     private fun setListViewHeight(
