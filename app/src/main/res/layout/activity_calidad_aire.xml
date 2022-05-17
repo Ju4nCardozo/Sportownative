@@ -55,4 +55,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Actualizar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AQI: 72"
+        android:paddingTop="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MODERADO"
+        android:paddingTop="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text='" Las personas usualmente sensibles deben de considerar reducir la exposición prolongada "'/>
 </LinearLayout>

@@ -68,7 +68,7 @@ class CalidadAire : AppCompatActivity(), OnMapReadyCallback {
             googleMap.addMarker(
                 MarkerOptions()
                     .position(ubication)
-                    .title("AQI: 20")
+                    .title("AQI: 72")
             )
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ubication, 15F))
         }
