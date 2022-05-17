@@ -22,10 +22,11 @@
             android:id="@+id/textViewUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text=""
             android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            android:text="nombre de usuario"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp" />
 
         <Button
             android:id="@+id/fotoDietas"
@@ -36,27 +37,27 @@
             android:background="@drawable/perfil_icono"
             />
     </LinearLayout>
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        app:srcCompat="@drawable/dietas" />
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/dietas" />
-
             <ImageButton
                 android:id="@+id/imageButton4"
                 android:layout_width="match_parent"
                 android:layout_height="73dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:background="@color/white"
                 app:srcCompat="@drawable/desayuno" />
 
