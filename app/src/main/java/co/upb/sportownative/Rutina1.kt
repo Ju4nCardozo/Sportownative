@@ -46,9 +46,16 @@ class Rutina1 : AppCompatActivity() {
         eListView2.setAdapter(listViewAdapter2)
         listViewAdapter3 = ExpandableListAdapter(this, listGroup3, listItem3)
         eListView3.setAdapter(listViewAdapter3)
-
         // initializing the listeners
         eListView1!!.setOnGroupClickListener { parent, v, groupPosition, id ->
+            setListViewHeight(parent, groupPosition)
+            false
+        }
+        eListView2!!.setOnGroupClickListener { parent, v, groupPosition, id ->
+            setListViewHeight(parent, groupPosition)
+            false
+        }
+        eListView3!!.setOnGroupClickListener { parent, v, groupPosition, id ->
             setListViewHeight(parent, groupPosition)
             false
         }
