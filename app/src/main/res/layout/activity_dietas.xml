@@ -57,7 +57,7 @@
                 android:id="@+id/imageButton4"
                 android:layout_width="match_parent"
                 android:layout_height="73dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="20dp"
                 android:background="@color/white"
                 app:srcCompat="@drawable/desayuno" />
 
@@ -65,7 +65,7 @@
                 android:id="@+id/imageButton5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:background="@color/white"
                 app:srcCompat="@drawable/mediamanana" />
 
@@ -73,7 +73,7 @@
                 android:id="@+id/imageButton6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:background="@color/white"
                 app:srcCompat="@drawable/almuerzo" />
 
@@ -81,7 +81,7 @@
                 android:id="@+id/imageButton7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:background="@color/white"
                 app:srcCompat="@drawable/merienda" />
 
@@ -89,7 +89,7 @@
                 android:id="@+id/imageButton8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="20dp"
                 android:background="@color/white"
                 app:srcCompat="@drawable/cena" />
