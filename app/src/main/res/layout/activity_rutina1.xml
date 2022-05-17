@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:gravity="top"
     tools:context=".Rutina1"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,21 +35,15 @@
             android:background="@drawable/perfil_icono"
             />
     </LinearLayout>
-    <ScrollView
+    <ExpandableListView
+        android:id="@+id/eListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ExpandableListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/eListView">
-
-            </ExpandableListView>
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="fill_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="2dp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        >
+    </ExpandableListView>
 </LinearLayout>

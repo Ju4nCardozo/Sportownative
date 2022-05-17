@@ -61,45 +61,45 @@ class Rutina1 : AppCompatActivity() {
         (listGroup as ArrayList<String>).add("Flexiones de pecho laterales en silla agarre natural")
 
         val item1 : MutableList<String> = ArrayList()
-        item1.add("Estiramiento de hombros, muñecas y cuello por 5 minutos")
+        item1.add("Estiramiento de hombros, muñecas y cuello por 5 minutos.")
         val item2 : MutableList<String> = ArrayList()
-        item2.add("Calentamiento de hombros, muñecas y cuello por 5 minutos")
+        item2.add("Calentamiento de hombros, muñecas y cuello por 5 minutos.")
         val item3 : MutableList<String> = ArrayList()
-        item3.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item3.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item4 : MutableList<String> = ArrayList()
-        item4.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item4.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item5 : MutableList<String> = ArrayList()
-        item5.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item5.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item6 : MutableList<String> = ArrayList()
-        item6.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item6.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         //dia 2
         val item7 : MutableList<String> = ArrayList()
-        item7.add("Estiramiento de hombros, muñecas, piernas y cuello por 5 minutos")
+        item7.add("Estiramiento de hombros, muñecas, piernas y cuello por 5 minutos.")
         val item8 : MutableList<String> = ArrayList()
-        item8.add("Calentamiento de hombros, muñecas, piernas y cuello por 5 minutos")
+        item8.add("Calentamiento de hombros, muñecas, piernas y cuello por 5 minutos.")
         val item9 : MutableList<String> = ArrayList()
-        item9.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item9.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item10 : MutableList<String> = ArrayList()
-        item10.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item10.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item11 : MutableList<String> = ArrayList()
-        item11.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item11.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item12 : MutableList<String> = ArrayList()
-        item12.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item12.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item13 : MutableList<String> = ArrayList()
         //dia 3
-        item13.add("Estiramiento de hombros, muñecas, y cuello por 5 minutos")
+        item13.add("Estiramiento de hombros, muñecas, y cuello por 5 minutos.")
         val item14 : MutableList<String> = ArrayList()
-        item14.add("Calentamiento de hombros, muñecas, y cuello por 5 minutos")
+        item14.add("Calentamiento de hombros, muñecas, y cuello por 5 minutos.")
         val item15 : MutableList<String> = ArrayList()
-        item15.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item15.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item16 : MutableList<String> = ArrayList()
-        item16.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item16.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item17 : MutableList<String> = ArrayList()
-        item17.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item17.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
         val item18 : MutableList<String> = ArrayList()
-        item18.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso")
+        item18.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
 
-        listItem[listGroup[0]] = item1/*
+        listItem[listGroup[0]] = item1
         listItem[listGroup[1]] = item2
         listItem[listGroup[2]] = item3
         listItem[listGroup[3]] = item4
@@ -116,7 +116,7 @@ class Rutina1 : AppCompatActivity() {
         listItem[listGroup[14]] = item15
         listItem[listGroup[15]] = item16
         listItem[listGroup[16]] = item17
-        listItem[listGroup[17]] = item18*/
+        listItem[listGroup[17]] = item18
     }
 
     private fun setup(email: String) {

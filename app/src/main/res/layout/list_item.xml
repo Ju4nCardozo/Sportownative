@@ -6,9 +6,24 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/expandedListItem"
-        android:layout_width="match_parent"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="20sp"
+        android:paddingTop="10sp"
+        android:text="Descripción:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/expandedListItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        android:paddingBottom="20sp"
+        android:layout_toRightOf="@id/title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>
