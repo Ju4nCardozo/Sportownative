@@ -14,9 +14,18 @@ import kotlinx.android.synthetic.main.list_item.*
 private val db = FirebaseFirestore.getInstance()
 
 class Rutina1 : AppCompatActivity() {
-    private lateinit var listViewAdapter: ExpandableListAdapter
-    private lateinit var listGroup: List<String>
-    private lateinit var listItem: HashMap<String,List<String>>
+    //Rutina dia 1
+    private lateinit var listViewAdapter1: ExpandableListAdapter
+    private lateinit var listGroup1: List<String>
+    private lateinit var listItem1: HashMap<String,List<String>>
+    //Rutina dia 2
+    private lateinit var listViewAdapter2: ExpandableListAdapter
+    private lateinit var listGroup2: List<String>
+    private lateinit var listItem2: HashMap<String,List<String>>
+    //Rutina dia 3
+    private lateinit var listViewAdapter3: ExpandableListAdapter
+    private lateinit var listGroup3: List<String>
+    private lateinit var listItem3: HashMap<String,List<String>>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,36 +38,44 @@ class Rutina1 : AppCompatActivity() {
 
         showList()
 
-        listViewAdapter = ExpandableListAdapter(this, listGroup, listItem)
-        eListView.setAdapter(listViewAdapter)
-
+        listViewAdapter1 = ExpandableListAdapter(this, listGroup1, listItem1)
+        eListView1.setAdapter(listViewAdapter1)
+        listViewAdapter2 = ExpandableListAdapter(this, listGroup2, listItem2)
+        eListView2.setAdapter(listViewAdapter2)
+        listViewAdapter3 = ExpandableListAdapter(this, listGroup3, listItem3)
+        eListView3.setAdapter(listViewAdapter3)
 
     }
 
     private fun showList(){
-        listGroup = ArrayList()
-        listItem = HashMap()
+
         //dia 1
-        (listGroup as ArrayList<String>).add("Estiramiento")
-        (listGroup as ArrayList<String>).add("Calentamiento de hombro")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho de agarre natural")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho de agarre abierto")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho inclinadas agarre natural")
-        (listGroup as ArrayList<String>).add("Flexiones de declinadas en suelo")
+        listGroup1 = ArrayList()
+        listItem1 = HashMap()
+        (listGroup1 as ArrayList<String>).add("Estiramiento")
+        (listGroup1 as ArrayList<String>).add("Calentamiento de hombro")
+        (listGroup1 as ArrayList<String>).add("Flexiones de pecho de agarre natural")
+        (listGroup1 as ArrayList<String>).add("Flexiones de pecho de agarre abierto")
+        (listGroup1 as ArrayList<String>).add("Flexiones de pecho inclinadas agarre natural")
+        (listGroup1 as ArrayList<String>).add("Flexiones de declinadas en suelo")
         //dia 2
-        (listGroup as ArrayList<String>).add("Estiramiento")
-        (listGroup as ArrayList<String>).add("Calentamiento de hombro")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho de agarre natural")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho de agarre abierto")
-        (listGroup as ArrayList<String>).add("Sentadillas posición natural")
-        (listGroup as ArrayList<String>).add("Sentadillas laterales posición abierta")
+        listGroup2 = ArrayList()
+        listItem2 = HashMap()
+        (listGroup2 as ArrayList<String>).add("Estiramiento")
+        (listGroup2 as ArrayList<String>).add("Calentamiento de hombro")
+        (listGroup2 as ArrayList<String>).add("Flexiones de pecho de agarre natural")
+        (listGroup2 as ArrayList<String>).add("Flexiones de pecho de agarre abierto")
+        (listGroup2 as ArrayList<String>).add("Sentadillas posición natural")
+        (listGroup2 as ArrayList<String>).add("Sentadillas laterales posición abierta")
         //dia 3
-        (listGroup as ArrayList<String>).add("Estiramiento")
-        (listGroup as ArrayList<String>).add("Calentamiento de hombro")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho de agarre natural")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho inclinadas agarre natural")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho inclinadas en silla agarre natural")
-        (listGroup as ArrayList<String>).add("Flexiones de pecho laterales en silla agarre natural")
+        listGroup3 = ArrayList()
+        listItem3 = HashMap()
+        (listGroup3 as ArrayList<String>).add("Estiramiento")
+        (listGroup3 as ArrayList<String>).add("Calentamiento de hombro")
+        (listGroup3 as ArrayList<String>).add("Flexiones de pecho de agarre natural")
+        (listGroup3 as ArrayList<String>).add("Flexiones de pecho inclinadas agarre natural")
+        (listGroup3 as ArrayList<String>).add("Flexiones de pecho inclinadas en silla agarre natural")
+        (listGroup3 as ArrayList<String>).add("Flexiones de pecho laterales en silla agarre natural")
 
         val item1 : MutableList<String> = ArrayList()
         item1.add("Estiramiento de hombros, muñecas y cuello por 5 minutos.")
@@ -99,24 +116,26 @@ class Rutina1 : AppCompatActivity() {
         val item18 : MutableList<String> = ArrayList()
         item18.add("5 sets de las repeticiones que le permita completar los 5 sets, de 30 segundo a 1 minuto de descanso.")
 
-        listItem[listGroup[0]] = item1
-        listItem[listGroup[1]] = item2
-        listItem[listGroup[2]] = item3
-        listItem[listGroup[3]] = item4
-        listItem[listGroup[4]] = item5
-        listItem[listGroup[5]] = item6
-        listItem[listGroup[6]] = item7
-        listItem[listGroup[7]] = item8
-        listItem[listGroup[8]] = item9
-        listItem[listGroup[9]] = item10
-        listItem[listGroup[10]] = item11
-        listItem[listGroup[11]] = item12
-        listItem[listGroup[12]] = item13
-        listItem[listGroup[13]] = item14
-        listItem[listGroup[14]] = item15
-        listItem[listGroup[15]] = item16
-        listItem[listGroup[16]] = item17
-        listItem[listGroup[17]] = item18
+        listItem1[listGroup1[0]] = item1
+        listItem1[listGroup1[1]] = item2
+        listItem1[listGroup1[2]] = item3
+        listItem1[listGroup1[3]] = item4
+        listItem1[listGroup1[4]] = item5
+        listItem1[listGroup1[5]] = item6
+        // dia 2
+        listItem2[listGroup2[0]] = item7
+        listItem2[listGroup2[1]] = item8
+        listItem2[listGroup2[2]] = item9
+        listItem2[listGroup2[3]] = item10
+        listItem2[listGroup2[4]] = item11
+        listItem2[listGroup2[5]] = item12
+        // dia 3
+        listItem3[listGroup3[0]] = item13
+        listItem3[listGroup3[1]] = item14
+        listItem3[listGroup3[2]] = item15
+        listItem3[listGroup3[3]] = item16
+        listItem3[listGroup3[4]] = item17
+        listItem3[listGroup3[5]] = item18
     }
 
     private fun setup(email: String) {
